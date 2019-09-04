@@ -2,9 +2,9 @@
 
 ## Contents
 
-- [Basic][#basics]
-- [Data Types][#data-types]
-- [Arrays][#arrays]
+- [Basic](#basics)
+- [Data Types](#data-types)
+- [Arrays](#arrays)
 
 # Basics
 
