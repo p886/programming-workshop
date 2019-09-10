@@ -4,7 +4,9 @@
 
 - [Basic](#basics)
 - [Data Types](#data-types)
+- [Variables](#variables)
 - [Arrays](#arrays)
+- [Methods](#methods)
 
 # Basics
 
@@ -122,6 +124,53 @@ false || false # -> false
 
 The logical OR returns `true` if at least one of the two sides evaluate to `true`.
 
+### Equality
+
+You can use `==` to check whether two values are equal to each other. Be careful with the syntax: A single equal sign (`=`) has a completely different meaning (see below [Arrays](#arrays) and [Variables](#variables)). So be sure to use a double equal sign to test for equality.
+
+```
+"foo" == "foo" # -> true
+    1 == 2     # -> false
+```
+
+## nil
+
+In Ruby the value `nil` denotes no value at all. It can be explicitly returned from code you write. `nil` will pop up in code every time no "real" value can be given and it is treated like `false` by logical operators:
+
+```
+nil && true # -> nil
+nil || true # -> true
+```
+
+# Variables
+
+Variables store data to be referenced at a later point in time.
+
+```
+# defining two variables (aka declarating)
+my_variable = "hello"
+another_variable = [true]
+
+# referencing those variables
+my_variable # -> "hello"
+another_variable # -> [true]
+```
+
+Trying to reference a variable that is not defined (or not in scope, see below) will give you an error, that will look something like this:
+
+```
+asdf
+# -> NameError: undefined local variable or method `asdf' for main:Object
+```
+
+That also happens if you have a typo either in the declaration or reference of your variable. In Ruby it is convetion to use underscores in variable names:
+
+```
+thisIsMyVariable    = true # -> not following convetion
+thisismyvariable    = true # -> not following convetion
+this_is_my_variable = true # -> following convetion
+```
+
 # Arrays
 
 You can think of arrays like a list of other data. The elements of these lists can be of any data type.
@@ -162,11 +211,86 @@ Creating arrays is fine but how do you get data out of them? This way
 
 Two things to note here:
 
-1. You put the position of the elemnt you want to have in square brackets after the array: `[0]`
+1. You put the position of the element you want to have in square brackets after the array: `[0]`
 2. You start counting at zero. So the first element is at position zero.
 
 Accessing a position that is not in the array will give you back `undefined`. In other programming languages this might result in a hard error that could crash your program.
 
 ```
-[1,2,3][10] # -> undefined
+[1,2,3][10] # -> nil
 ```
+
+## Updating Arrays
+
+If you want to update an array you can use the assignment operator (`=`):
+
+```
+my_array = [1,2,3]
+my_array[1] = "updated"
+my_array # -> [1, "updated", 3]
+```
+
+# Methods
+
+Methods hold code that can be executed by calling the method from a different place in the code. This simple concept is very powerful and the backbone of programming. Here's how you define a method:
+
+```
+def my_method()
+  # code…
+end
+```
+
+First we have the `def` keyword, then the name of the method. This name has to be unique, like for variables. Then an opening and closing parantheses `()`. After a newline you would provide code in what is called the "body" of a method. In this example we just have a comment in the body. By convetion the body of the method is preceded by two spaces. This is called "indentation". Finally you close the body by providing the `end` keyword.
+
+Here's a method that calculates `1+1`:
+
+```
+def one_plus_one()
+  1+1
+end
+```
+
+We can verify that it works by calling the method:
+
+```
+one_plus_one() # -> 2
+```
+
+Calling a method works by appending the opening and closing parentheses after the method name: `one_plus_one()`. As you can see (or try for yourself) calling the method evaluates to the integer `2`. In programming terms we can say that the method `one_plus_one` *returned* the value `2`. In some programming languages you have to explicitly add a `return` keyword, or the method will return `nil` or some other not-that-useful value:
+
+```
+def one_plus_one()
+  return 1+1
+end
+```
+
+While you can explicitly add a `return`, this is not necessary in Ruby. Any method will return the value of the last line it evaluated.
+
+Of course always calculating the result of `1+1` is not that helpful. It would be more helpful if we could add any two numbers together. This can be achieved by providing so called **arguments** to your method:
+
+```
+def add(first, second)
+  first + second
+end
+```
+
+When calling this method you need to provide these arguments (i.e. the numbers you want to add):
+
+```
+add(1, 100) # -> 101
+```
+
+If you don't provide the arguments you'll get an error:
+
+```
+add()
+# -> ArgumentError: wrong number of arguments (given 0, expected 2)
+```
+
+## Exercises
+
+- Write a method that checks whether two values are equal to each other and store the result in a variable.
+- Write a method that calls another method.
+- Write a method that calls another method that calls another method.
+- Write a method that adds "hello" to any name given as argument. Hint: You can combine two strings like this: `"first string" + "second string"`. Make sure there is a space between "Hello" and the name.
+- Write a method that takes a single argument but always returns `nil` no matter what you give as argument.
