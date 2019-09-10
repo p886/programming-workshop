@@ -8,7 +8,7 @@
 
 # Basics
 
-Hello! Let's learn Javascript. It's a great and easy-to-learn language that is used all over the web and on servers. The concepts you'll learn here are applicable to all other programming languages though.
+Hello! Let's learn how to write software a.k.a programming. We will be using the language Ruby. However, the concepts you'll learn here are applicable to all other programming languages.
 
 ## What is programming all about?
 
@@ -24,19 +24,19 @@ open that file  --programming language-->  0111101110111011111...
 export as PDF   --programming language-->  0100010100111100000...
 ```
 
-## REPL
+## Tools
 
-To get started with programming we'll be using the Javascript console that is built in your browser. You can type code directly into the console. When you hit `Enter` it will be evaluated and the result will be printed to the screen. That's why this kind of interaction is called a `Read, Evaluate, Print, Loop` or `REPL` for short.
+[repl.it](https://repl.it/languages/ruby) provides you with an online ruby development enviroment. There is no need to install anything on your computer.
 
 ## Comments
 
-In Javascript everything after `//` will be ignored and can be used for documenting your code.
+In Ruby everything after `#` will be ignored and can be used for documenting your code.
 
 ```
-// this is a comment
+# this is a comment
 ```
 
-In this guide I will use `// ->` to indicate what a piece of code evaluates to.
+In this guide I will use `# ->` to indicate what a piece of code evaluates to.
 
 # Data Types
 
@@ -48,7 +48,7 @@ There are few different ways you can store data in your program.
 
 ```
 1+1
-// -> 2
+# -> 2
 ```
 
 Integers are just simple numbers without any decimal part.
@@ -60,14 +60,14 @@ Unlike integers, floats do have a decimal part.
 ```
 42.0
 165.4344
-3.23 + 54.2 // -> 57.43
+3.23 + 54.2 # -> 57.43
 ```
 
 Sometimes the conversion from binary to decimal numbers can lead to unexpected results:
 
 ```
 0.2 + 0.1
-// -> 0.30000000000000004
+# -> 0.30000000000000004
 ```
 
 The reason for that is that `0.3` in base 2 is a repeating decimal just like 1/3 = 0.333.... is in decimal. There are libraries to handle proper decimal arithmetic.
@@ -103,10 +103,10 @@ The boolean data type consists of the values `true` and `false`. Some helpful op
 ### Logical AND
 
 ```
-true  && true  // -> true
-true  && false // -> false
-false && true  // -> false
-false && false // -> false
+true  && true  # -> true
+true  && false # -> false
+false && true  # -> false
+false && false # -> false
 ```
 
 The logical AND returns `true` only if both sides evaluate to `true`.
@@ -114,10 +114,10 @@ The logical AND returns `true` only if both sides evaluate to `true`.
 ### Logical OR
 
 ```
-true  || true  // -> true
-true  || false // -> true
-false || true  // -> true
-false || false // -> false
+true  || true  # -> true
+true  || false # -> true
+false || true  # -> true
+false || false # -> false
 ```
 
 The logical OR returns `true` if at least one of the two sides evaluate to `true`.
@@ -134,8 +134,8 @@ You can think of arrays like a list of other data. The elements of these lists c
 You can have as much or as little space between the elements as you want. It is generally recommended to have one space after the comma:
 
 ```
-[1,2,2,2,2    3,          4] // works but looks weird
-[1, 2, 2, 2, 2, 3, 4]        // better
+[1,2,2,2,2    3,          4] # works but looks weird
+[1, 2, 2, 2, 2, 3, 4]        # better
 ```
 
 If you have really long arrays you can span them over mutliple lines:
@@ -155,9 +155,9 @@ If you have really long arrays you can span them over mutliple lines:
 Creating arrays is fine but how do you get data out of them? This way
 
 ```
-['first', 'second', 'third'][0] // -> 'first'
-['first', 'second', 'third'][1] // -> 'second'
-['first', 'second', 'third'][2] // -> 'second'
+['first', 'second', 'third'][0] # -> 'first'
+['first', 'second', 'third'][1] # -> 'second'
+['first', 'second', 'third'][2] # -> 'second'
 ```
 
 Two things to note here:
@@ -168,5 +168,5 @@ Two things to note here:
 Accessing a position that is not in the array will give you back `undefined`. In other programming languages this might result in a hard error that could crash your program.
 
 ```
-[1,2,3][10] // -> undefined
+[1,2,3][10] # -> undefined
 ```
