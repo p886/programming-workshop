@@ -240,7 +240,7 @@ def my_method()
 end
 ```
 
-First we have the `def` keyword, then the name of the method. This name has to be unique, like for variables. Then an opening and closing parantheses `()`. After a newline you would provide code in what is called the "body" of a method. In this example we just have a comment in the body. By convetion the body of the method is preceded by two spaces. This is called "indentation". Finally you close the body by providing the `end` keyword.
+First we have the `def` keyword, then the name of the method. This name has to be unique, like for variables. Then an opening and closing parantheses `()`. After a newline you would provide code in what is called the **body** of a method. In this example we just have a comment in the body. By convetion the body of the method is preceded by two spaces. This is called **indentation** and really helps the readability of your code. Finally, you close the body by providing the `end` keyword.
 
 Here's a method that calculates `1+1`:
 
