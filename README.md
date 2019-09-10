@@ -2,7 +2,7 @@
 
 ## Contents
 
-- [Basic](#basics)
+- [Basics](#basics)
 - [Data Types](#data-types)
 - [Variables](#variables)
 - [Arrays](#arrays)
